@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="event1.css">
+    <title>Dance Events</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        .scroll-snap-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            background-image: url('dance-event-background.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-info-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .event-main {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .event-sub {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .event-details {
+            list-style: none;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        .event-details li {
+            margin: 8px 0;
+        }
+
+        .highlight {
+            color: #ffde59;
+            font-weight: bold;
+        }
+
+        .event-info {
+            font-size: 1.3rem;
+            color: #ffde59;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            background-color: #ffde59;
+            color: #000;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ffb300;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-snap-card">
+        <div class="slide">
+            <div class="slide-info-container">
+                <h1 class="event-main">Inter Deanery Dance Extravaganza</h1>
+                <h2 class="event-sub">A Grand Dance Competition</h2>
+                <ul class="event-details">
+                    <li><span class="highlight">Date:</span> 24 January 2025 | <span class="highlight">Time:</span> 11:30 AM</li>
+                    <li><span class="highlight">Venue:</span> Block-I Quadrangle – Central Campus</li>
+                    <li><span class="highlight">Event Type:</span> Team Dance Performance</li>
+                    <li><span class="highlight">Participation:</span> 3 to 5 teams per deanery, 25 dancers minimum per team</li>
+                    <li><span class="highlight">Performance Time:</span> 7-8 minutes</li>
+                    <li><span class="highlight">Songs:</span> Indian movie/folk songs (Any language)</li>
+                    <li><span class="highlight">Props/Costumes:</span> Optional, but expenses borne by the team</li>
+                    <li><span class="highlight">Grading:</span> Based on dance performance and team spirit (Points: A - 50, B - 30, C - 20)</li>
+                </ul>
+                <p class="event-info">
+                    Registration Deadline: <span class="highlight">March 5, 2024</span> | Slots Assigned: <span class="highlight">March 12, 2024</span>
+                </p>
+                <button class="cta-button">Register Now</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
