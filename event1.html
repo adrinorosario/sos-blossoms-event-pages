@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="event1.css">
     <title>Music Events</title>
+    <style>
+    .active {
+    outline: 4px solid gold;
+    transform: scale(1.05);
+    transition: transform 0.3s, outline 0.3s;
+    }
+
+    </style>
 </head>
 <body>
     <div class="scroll-snap-card">
@@ -39,7 +47,7 @@
         </div>
 
         <!-- Indian Group -->
-        <div class="slide" style="background-image: url('indian-group.jpg');">
+        <div class="slide" style="background-image: url('./20240714152140_classical-music-at-weddings.webp');">
             <div class="slide-info-container">
                 <h1 class="event-main">Music Festival</h1>
                 <h2 class="event-sub">Indian Group</h2>
@@ -68,7 +76,7 @@
         </div>
 
         <!-- Western Singing (Solo) -->
-        <div class="slide" style="background-image: url('western-singing.jpg');">
+        <div class="slide" style="background-image: url('./1728332200855.jpeg');">
             <div class="slide-info-container">
                 <h1 class="event-main">Music Festival</h1>
                 <h2 class="event-sub">Western Singing (Solo)</h2>
@@ -82,5 +90,96 @@
             </div>
         </div>
     </div>
+
+    <button id="scroll-right-btn">Scroll Right</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
+    
+            // Function to update the active slide
+            function updateActiveSlide() {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle("active", index === currentSlide);
+                });
+            }
+    
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateActiveSlide();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateActiveSlide();
+            }
+    
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowRight") {
+                    nextSlide();
+                } else if (event.key === "ArrowLeft") {
+                    prevSlide();
+                }
+            });
+    
+
+            slides.forEach(slide => {
+                slide.addEventListener("click", () => {
+                    alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+                });
+            });
+
+            updateActiveSlide();
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".slide");
+        const scrollContainer = document.querySelector(".scroll-snap-card");
+        const scrollRightBtn = document.getElementById("scroll-right-btn");
+        let currentSlide = 0;
+
+        function updateActiveSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateActiveSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateActiveSlide();
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") {
+                nextSlide();
+            } else if (event.key === "ArrowLeft") {
+                prevSlide();
+            }
+        });
+
+        slides.forEach(slide => {
+            slide.addEventListener("click", () => {
+                alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+            });
+        });
+
+        scrollRightBtn.addEventListener("click", () => {
+            scrollContainer.scrollBy({
+                left: scrollContainer.offsetWidth,
+                behavior: "smooth"
+            });
+        });
+
+        updateActiveSlide();
+    });
+    </script>
+    
 </body>
 </html>

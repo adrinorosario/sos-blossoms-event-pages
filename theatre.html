@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="event1.css">
     <title>Theatre Events</title>
+    <style>
+    .active {
+    outline: 4px solid gold;
+    transform: scale(1.05);
+    transition: transform 0.3s, outline 0.3s;
+    }
+
+    </style>
 </head>
 <body>
     <div class="scroll-snap-card">
 
         <!-- Mono Acting -->
-        <div class="slide" style="background-image: url('mono-acting.jpg');">
+        <div class="slide" style="background-image: url('./cb372f60017879.Y3JvcCwzNTE2LDI3NTIsMCw3OTA.jpg');">
             <div class="slide-info-container">
                 <h1 class="event-main">Theatre Events</h1>
                 <h2 class="event-sub">Mono Acting</h2>
@@ -26,10 +34,10 @@
         </div>
 
         <!-- Street Theatre -->
-        <div class="slide" style="background-image: url('street-theatre.jpg');">
+        <div class="slide" style="background-image: url('./6bc7e5_ead05a2c173b43ffa1ce89407788500a~mv2.webp');">
             <div class="slide-info-container">
                 <h1 class="event-main">Theatre Events</h1>
-                <h2 class="event-sub">Street Theatre</h2>
+                <h2 class="event-sub">Street Play</h2>
                 <ul class="event-details">
                     <li>Duration: 8+2 minutes (including entry/exit).</li>
                     <li>Participants: Minimum 15 and maximum 25 members.</li>
@@ -41,10 +49,10 @@
         </div>
 
         <!-- Proscenium Theatre -->
-        <div class="slide" style="background-image: url('proscenium-theatre.jpg');">
+        <div class="slide" style="background-image: url('proscenium.jpg');">
             <div class="slide-info-container">
                 <h1 class="event-main">Theatre Events</h1>
-                <h2 class="event-sub">Proscenium Theatre</h2>
+                <h2 class="event-sub">Proscenium</h2>
                 <ul class="event-details">
                     <li>Duration: 20+5 minutes (including stage setup and clearance).</li>
                     <li>Participants: Minimum 8 and maximum 25 (including backstage crew).</li>
@@ -56,7 +64,7 @@
         </div>
 
         <!-- Mime -->
-        <div class="slide" style="background-image: url('mime.jpg');">
+        <div class="slide" style="background-image: url('./at_jan11_MMarceau.jpg');">
             <div class="slide-info-container">
                 <h1 class="event-main">Theatre Events</h1>
                 <h2 class="event-sub">Mime</h2>
@@ -71,7 +79,7 @@
         </div>
 
         <!-- Short Film Making -->
-        <div class="slide" style="background-image: url('short-film.jpg');">
+        <div class="slide" style="background-image: url('./short-film-essentials_0.jpg');">
             <div class="slide-info-container">
                 <h1 class="event-main">Theatre Events</h1>
                 <h2 class="event-sub">Short Film Making</h2>
@@ -86,5 +94,96 @@
         </div>
 
     </div>
+
+    <button id="scroll-right-btn">Scroll Right</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
+    
+
+            function updateActiveSlide() {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle("active", index === currentSlide);
+                });
+            }
+    
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateActiveSlide();
+            }
+    
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateActiveSlide();
+            }
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowRight") {
+                    nextSlide();
+                } else if (event.key === "ArrowLeft") {
+                    prevSlide();
+                }
+            });
+
+            slides.forEach(slide => {
+                slide.addEventListener("click", () => {
+                    alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+                });
+            });
+
+            updateActiveSlide();
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".slide");
+        const scrollContainer = document.querySelector(".scroll-snap-card");
+        const scrollRightBtn = document.getElementById("scroll-right-btn");
+        let currentSlide = 0;
+
+        function updateActiveSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateActiveSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateActiveSlide();
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") {
+                nextSlide();
+            } else if (event.key === "ArrowLeft") {
+                prevSlide();
+            }
+        });
+
+        slides.forEach(slide => {
+            slide.addEventListener("click", () => {
+                alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+            });
+        });
+
+        scrollRightBtn.addEventListener("click", () => {
+            scrollContainer.scrollBy({
+                left: scrollContainer.offsetWidth,
+                behavior: "smooth"
+            });
+        });
+
+        updateActiveSlide();
+    });
+    </script>
+    
 </body>
 </html>
