@@ -6,94 +6,120 @@
     <link rel="stylesheet" href="event1.css">
     <title>Dance Events</title>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-        }
+        /* Responsive Design */
+body {
+    margin: 0;
+    font-family: 'Emilys Candy', sans-serif;
+    background-color: #f6e1d6;
+}
 
-        .scroll-snap-card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
+.scroll-snap-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 1rem;
+}
 
-        .slide {
-            background-image: url('dance-event-background.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            height: 700px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+.slide {
+    background-image: url('./The-Shall-We-Dance-dance-extravaganza-takes-place-at-The-Playhouse-Theatre-from-September-13-to-15-Picture-Supplied.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+}
 
-        .slide-info-container {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 900px;
-            text-align: center;
-        }
+.slide-info-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+}
 
-        .event-main {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+.event-main {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
 
-        .event-sub {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
+.event-sub {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
 
-        .event-details {
-            list-style: none;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            text-align: left;
-            margin: 0;
-            padding: 0;
-        }
+.event-details {
+    list-style: none;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
 
-        .event-details li {
-            margin: 8px 0;
-        }
+.event-details li {
+    margin: 8px 0;
+}
 
-        .highlight {
-            color: #ffde59;
-            font-weight: bold;
-        }
+.highlight {
+    color: #ffde59;
+    font-weight: bold;
+}
 
-        .event-info {
-            font-size: 1.3rem;
-            color: #ffde59;
-            margin-top: 20px;
-        }
+.event-info {
+    font-size: 1.1rem;
+    color: #ffde59;
+    margin-top: 20px;
+}
 
-        .cta-button {
-            background-color: #ffde59;
-            color: #000;
-            padding: 12px 24px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.cta-button {
+    background-color: #ffde59;
+    color: #000;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        .cta-button:hover {
-            background-color: #ffb300;
-        }
+.cta-button:hover {
+    background-color: #ffb300;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .event-main {
+        font-size: 2rem;
+    }
+
+    .event-sub {
+        font-size: 1.5rem;
+    }
+
+    .event-details {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
     </style>
 </head>
 <body>
